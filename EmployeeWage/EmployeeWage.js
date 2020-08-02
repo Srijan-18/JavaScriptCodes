@@ -7,18 +7,25 @@ let MAX_WORKING_DAYS = 20;
 let MAX_WORKING_HOURS = 100;
 let hoursInMonth = 0;
 let numOfDays = 0;
-while( numOfDays < MAX_WORKING_DAYS && hoursInMonth < MAX_WORKING_HOURS)
-{
-	let empCheck = Math.floor(Math.random() * 10) % 3;
+
+function getDailyWorkingHours() {
+let dailyHours = 0;
+let empCheck = Math.floor(Math.random() * 10) % 3;
 	switch (empCheck)
 	{
 		case IS_FULL_TIME:
-			hoursInMonth += FULL_TIME_DAY_HOURS;
+			dailyHours = FULL_TIME_DAY_HOURS;
 		break;
 		case IS_PART_TIME:
-			hoursInMonth += PART_TIME_DAY_HOURS;
+			dailyHours = PART_TIME_DAY_HOURS;
 		break;
 	}
+	return dailyHours;
+}
+
+while( numOfDays < MAX_WORKING_DAYS && hoursInMonth < MAX_WORKING_HOURS)
+{
+	hoursInMonth += getDailyWorkingHours();
 	numOfDays++;
 }
 let wageForMonth = hoursInMonth * WAGE_PER_HOUR;
