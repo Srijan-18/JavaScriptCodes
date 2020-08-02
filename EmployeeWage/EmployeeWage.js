@@ -7,7 +7,7 @@ let MAX_WORKING_DAYS = 20;
 let MAX_WORKING_HOURS = 100;
 let hoursWorkedInMonth = 0;
 let numOfDays = 0;
-let dailyWagesOfEmployee = new Array();
+let dailyWagesOfEmployee = new Map();
 
 function getDailyWorkingHours() {
 	let dailyHours = 0;
@@ -31,7 +31,7 @@ while( numOfDays < MAX_WORKING_DAYS && hoursWorkedInMonth < MAX_WORKING_HOURS) {
 	let dailyHours = getDailyWorkingHours();
 	hoursWorkedInMonth += dailyHours;
 	numOfDays++;
-	dailyWagesOfEmployee.push(calculateWage(dailyHours));
+	dailyWagesOfEmployee.set(numOfDays, calculateWage(dailyHours));
 }
 
 let wageForMonth = calculateWage(hoursWorkedInMonth);
