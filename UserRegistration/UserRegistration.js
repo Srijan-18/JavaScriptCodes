@@ -12,27 +12,26 @@ else
 	console.log("Invalid "+ field + ".\n");
 }
 
+function validateWithRegexAndDisplayResult(input, field, REGEX) {
+	resultDisplay(REGEX.test(input), field);
+}
+
 //========== FIRST NAME ==========
 let input = prompt("Enter First Name :");
-let result = NAME_REGEX.test(input);
-resultDisplay(result, "First Name");
+validateWithRegexAndDisplayResult(input, "First Name", NAME_REGEX);
 
 //========== LAST NAME ==========
 input = prompt("Enter Last Name :");
-result = NAME_REGEX.test(input);
-resultDisplay(result, "Last Name");
+validateWithRegexAndDisplayResult(input, "Last Name", NAME_REGEX);
 
 //========== E-MAIL ==========
 input = prompt("Enter Email-Id :");
-result = EMAIL_REGEX.test(input);
-resultDisplay(result, "Email-Id");
+validateWithRegexAndDisplayResult(input, "Email-Id", EMAIL_REGEX);
 
 //========== MOBILE NUMBER ===========
 input = prompt("Enter Mobile Number :");
-result = MOBILE_NUMBER_REGEX.test(input);
-resultDisplay(result, "Mobile Number");
+validateWithRegexAndDisplayResult(input, "Mobile Number", MOBILE_NUMBER_REGEX);
 
 //========== PASSWORD ==========
 input = prompt("Enter Password :");
-result = PASSWORD_REGEX.test(input);
-resultDisplay(result, "Password");
+validateWithRegexAndDisplayResult(input, "Password", PASSWORD_REGEX);
