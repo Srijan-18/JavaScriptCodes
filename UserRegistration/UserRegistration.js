@@ -3,7 +3,7 @@ let prompt = require('prompt-sync')();
 let NAME_REGEX = RegExp('^[A-Z]{1}[a-z]{2,}$');
 let EMAIL_REGEX = RegExp('^[a-zA-Z0-9]+([._+-][0-9a-zA-Z]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2,3})?$');
 let MOBILE_NUMBER_REGEX = RegExp('^[1-9][0-9]{0,2}[ ][1-9][0-9]{9}$');
-let PASSWORD_REGEX = RegExp('^(?=.*[A-Z])([A-z0-9]){8,}$');
+let PASSWORD_REGEX = RegExp('^(?=.*[A-Z])(?=.*[0-9])([A-z0-9]){8,}$');
 
 function resultDisplay(result, field) {
 if(result)
